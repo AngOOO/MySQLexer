@@ -118,3 +118,18 @@ create table aa like a;
 insert into aa select distinct * from a;
 rename table a to c,aa to a;
 drop table c;
+
+--使用count()返回查询到的数据的数量
+select count(*) from student;
+select count(1) from student;
+select count(qq) from student;
+select count(distinct math) from exam_result;
+--使用sum()返回查询到的数据的总和，不是数字没有意义
+select sum(math) from exam_result;
+select sum(chinese) from exam_result where chinese>10;
+--使用avg()返回查询到的数据的平均值，不是数字没有意义
+select avg(math+chinese+english) 平均成绩 from exam_result;
+--使用max() 返回查询到的数据的 最大值，不是数字没有意义
+select max(chinese) from exam_result;
+--使用min() 返回查询到的数据的 最小值，不是数字没有意义
+select min(math) from exam_result where math>70;
